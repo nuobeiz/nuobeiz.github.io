@@ -27,6 +27,17 @@
             position: relative;
             background-color: inherit;
             width: 50%;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+        }
+        .timeline-item.left.visible {
+            animation: slideInLeft 1s forwards;
+        }
+        .timeline-item.right.visible {
+            animation: slideInRight 1s forwards;
         }
         .timeline-item::after {
             content: '';
@@ -78,6 +89,28 @@
             background-color: white;
             position: relative;
             border-radius: 6px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
     </style>
 </head>
@@ -145,5 +178,30 @@
     <footer>
         <p>&copy; 2024 Nuobei Zhang. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const timelineItems = document.querySelectorAll(".timeline-item");
+
+            const observerOptions = {
+                root: null, // Use the viewport as the root
+                rootMargin: "0px",
+                threshold: 0.1 // Trigger when 10% of the item is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+                    }
+                });
+            }, observerOptions);
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
 </body>
 </html>

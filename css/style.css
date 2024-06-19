@@ -38,3 +38,42 @@ footer {
     width: 100%;
     position: relative; /* Removed absolute positioning */
 }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+}
+
+.timeline-item.left.visible {
+    animation: slideInLeft 1s forwards;
+}
+
+.timeline-item.right.visible {
+    animation: slideInRight 1s forwards;
+}
