@@ -1,30 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 5;
     padding: 0;
     background-color: #f4f7f6;
     color: #333;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 header {
-    background-color: #87ceeb;
+    background-color: #83B4FF;
     color: white;
     text-align: center;
     padding: 2rem 0;
 }
-/* nav {
-    text-align: center;
-    margin: 1rem 0;
-}
-nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #87ceeb;
-} */
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: #1A2130;
     position: sticky;
     position: -webkit-sticky;
     top: 0;
