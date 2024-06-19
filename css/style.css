@@ -7,11 +7,12 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 header {
-    background-image: url('img/banner.jpeg') no-repeat top center ;
+    background-color: #83B4FF;
     color: white;
     text-align: center;
     padding: 2rem 0;
 }
+
 /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
     overflow: hidden;
