@@ -7,20 +7,24 @@
     <link rel="icon" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        .bamboo-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .bamboo {
+            cursor: pointer;
+        }
         .timeline {
             position: relative;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 2rem auto;
+            opacity: 0;
+            height: 0;
+            transition: height 2s ease-out, opacity 2s ease-out;
         }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #87ceeb;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
+        .timeline.visible {
+            opacity: 1;
+            height: auto;
         }
         .timeline-item {
             padding: 10px 40px;
@@ -30,14 +34,11 @@
             opacity: 0;
             transition: opacity 0.5s ease-out;
         }
-        .timeline-item.visible {
-            opacity: 1;
+        .timeline-item.left {
+            left: 0;
         }
-        .timeline-item.left.visible {
-            animation: slideInLeft 1s forwards;
-        }
-        .timeline-item.right.visible {
-            animation: slideInRight 1s forwards;
+        .timeline-item.right {
+            left: 50%;
         }
         .timeline-item::after {
             content: '';
@@ -50,12 +51,6 @@
             top: 15px;
             border-radius: 50%;
             z-index: 1;
-        }
-        .left {
-            left: 0;
-        }
-        .right {
-            left: 50%;
         }
         .left::before {
             content: " ";
@@ -90,28 +85,6 @@
             position: relative;
             border-radius: 6px;
         }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
     </style>
 </head>
 <body>
@@ -134,7 +107,13 @@
             anywhere from auto insurance to furniture sales. 
             So I am always curious and excited about my next project.</p>
 
-        <h2>Personal Timeline</h2>
+        <div class="bamboo-container">
+            <svg class="bamboo" width="100" height="100" viewBox="0 0 100 100">
+                <!-- Bamboo shoot SVG content -->
+                <rect x="45" y="90" width="10" height="10" fill="green" />
+            </svg>
+        </div>
+
         <div class="timeline">
             <div class="timeline-item left">
                 <div class="content">
@@ -181,27 +160,25 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const bamboo = document.querySelector(".bamboo");
+            const timeline = document.querySelector(".timeline");
             const timelineItems = document.querySelectorAll(".timeline-item");
-
-            const observerOptions = {
-                root: null, // Use the viewport as the root
-                rootMargin: "0px",
-                threshold: 0.1 // Trigger when 10% of the item is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target); // Stop observing once the animation is triggered
-                    }
-                });
-            }, observerOptions);
-
-            timelineItems.forEach(item => {
-                observer.observe(item);
+    
+            bamboo.addEventListener("click", function() {
+                bamboo.classList.add("grow");
+                timeline.classList.add("visible");
+    
+                // Add a delay to animate timeline points after bamboo grows
+                setTimeout(() => {
+                    timelineItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = 1;
+                        }, index * 500); // Delay each item by 0.5 seconds
+                    });
+                }, 2000); // Delay timeline items animation to start after bamboo grows
             });
         });
     </script>
+    
 </body>
 </html>

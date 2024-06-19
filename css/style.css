@@ -77,3 +77,27 @@ footer {
 .timeline-item.right.visible {
     animation: slideInRight 1s forwards;
 }
+
+.bamboo svg {
+    animation: grow 2s forwards;
+}
+
+@keyframes grow {
+    from {
+        height: 10px;
+    }
+    to {
+        height: 100px;
+    }
+}
+
+.timeline {
+    opacity: 0;
+    height: 0;
+    transition: height 2s ease-out, opacity 2s ease-out;
+}
+
+.timeline.visible {
+    opacity: 1;
+    height: auto;
+}
