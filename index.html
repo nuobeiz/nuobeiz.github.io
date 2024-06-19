@@ -19,12 +19,14 @@
             max-width: 800px;
             margin: 2rem auto;
             transition: opacity 2s ease-out;
+            display: flex;
+            align-items: center;
         }
         .timeline.visible {
             opacity: 1;
         }
         .timeline-item {
-            padding: 10px 40px;
+            padding: 10px 20px;
             position: relative;
             background-color: inherit;
             width: 50%;
@@ -84,15 +86,15 @@
         }
         .bamboo-grow {
             display: none;
-            width: 10px;
-            height: 0;
+            width: 0;
+            height: 10px;
             background: green;
-            margin: 0 auto;
-            transition: height 2s ease-out;
+            margin: 0 10px;
+            transition: width 2s ease-out;
         }
         .bamboo-grow.visible {
             display: block;
-            height: 100px; /* Height of the bamboo segment */
+            width: 100px; /* Width of the bamboo segment */
         }
     </style>
 </head>
@@ -124,7 +126,6 @@
         </div>
 
         <div class="timeline">
-            <div class="bamboo-grow"></div>
             <div class="timeline-item left">
                 <div class="content">
                     <h3>2018</h3>
