@@ -74,27 +74,27 @@ footer {
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-  }
-  
-  /* Create two unequal columns that sits next to each other */
-  .left {
-    -ms-flex: 30%; /* IE10 */
-    flex: 30%;
+}
+
+/* Create three equal columns that sit next to each other */
+.left, .middle, .right {
+    -ms-flex: 33.33%; /* IE10 */
+    flex: 33.33%;
+    padding: 20px;
+}
+
+.left {
     background-color: #f1f1f1;
-    padding: 20px;
-  }
-  .middle {   
-    -ms-flex: 30%; /* IE10 */
-    flex: 30%;
+}
+
+.middle {
     background-color: white;
-    padding: 20px;
-  }
-  .right {   
-    -ms-flex: 30%; /* IE10 */
-    flex: 30%;
-    background-color: f1f1f1;
-    padding: 20px;
-  }
+}
+
+.right {
+    background-color: #f1f1f1;
+}
+
 
 .timeline {
     display: flex;
