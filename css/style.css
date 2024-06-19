@@ -20,8 +20,8 @@ header {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
   
   /* Style the navigation bar links */
