@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Nuobei Zhang</title>
+    <title>About Me - Nuobei Zhang</title>
     <link rel="icon" href="img/icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #87ceeb;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #87ceeb;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #87ceeb;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent #87ceeb;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #87ceeb;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent #87ceeb transparent transparent;
+        }
+        .right::after {
+            left: -16px;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,8 +94,52 @@
     </nav>
     
     <div class="container">
-        <h2>Welcome</h2>
-        <p>Welcome to my personal website where you can find information about my projects, blog posts, and more about me.</p>
+        <h2>About Me</h2>
+        <p>Hi, I'm Nuobei. I graduated from University of Michigan Ann Arbor and majored in BS Data Science. 
+            I enjoyed all the projects I have worked on while becoming a data scientist. 
+            What I love the most about this career is how I can consistently learn from different fields, 
+            anywhere from auto insurance to furniture sales. 
+            So I am always curious and excited about my next project.</p>
+
+        <h2>Personal Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>2018</h3>
+                    <p>Started my Bachelor’s degree in Data Science at the University of Michigan, Ann Arbor.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>2019</h3>
+                    <p>Completed an internship at XYZ Corp, working on predictive analytics for marketing campaigns.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>2020</h3>
+                    <p>Worked on a collaborative project with ABC Inc., focusing on time-series forecasting for inventory management.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>2021</h3>
+                    <p>Graduated with honors and started my first full-time job as a Data Scientist at DEF Ltd.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="content">
+                    <h3>2022</h3>
+                    <p>Developed a novel machine learning model for fraud detection that significantly reduced false positives.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="content">
+                    <h3>2023</h3>
+                    <p>Published a paper on advanced data visualization techniques in a leading journal.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer>
