@@ -55,6 +55,9 @@ header {
     margin: auto;
     padding: 2rem 0;
 }
+.logo-pic {
+    border-radius: 50%; /* Optional: makes the image round */
+  }
 h2 {
     border-bottom: 2px solid #87ceeb;
     padding-bottom: 0.5rem;
