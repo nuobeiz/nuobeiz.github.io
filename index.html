@@ -18,13 +18,10 @@
             position: relative;
             max-width: 800px;
             margin: 2rem auto;
-            opacity: 0;
-            height: 0;
-            transition: height 2s ease-out, opacity 2s ease-out;
+            transition: opacity 2s ease-out;
         }
         .timeline.visible {
             opacity: 1;
-            height: auto;
         }
         .timeline-item {
             padding: 10px 40px;
@@ -85,6 +82,18 @@
             position: relative;
             border-radius: 6px;
         }
+        .bamboo-grow {
+            display: none;
+            width: 10px;
+            height: 0;
+            background: green;
+            margin: 0 auto;
+            transition: height 2s ease-out;
+        }
+        .bamboo-grow.visible {
+            display: block;
+            height: 100px; /* Height of the bamboo segment */
+        }
     </style>
 </head>
 <body>
@@ -115,42 +124,49 @@
         </div>
 
         <div class="timeline">
+            <div class="bamboo-grow"></div>
             <div class="timeline-item left">
                 <div class="content">
                     <h3>2018</h3>
                     <p>Started my Bachelor’s degree in Data Science at the University of Michigan, Ann Arbor.</p>
                 </div>
             </div>
+            <div class="bamboo-grow"></div>
             <div class="timeline-item right">
                 <div class="content">
                     <h3>2019</h3>
                     <p>Completed an internship at XYZ Corp, working on predictive analytics for marketing campaigns.</p>
                 </div>
             </div>
+            <div class="bamboo-grow"></div>
             <div class="timeline-item left">
                 <div class="content">
                     <h3>2020</h3>
                     <p>Worked on a collaborative project with ABC Inc., focusing on time-series forecasting for inventory management.</p>
                 </div>
             </div>
+            <div class="bamboo-grow"></div>
             <div class="timeline-item right">
                 <div class="content">
                     <h3>2021</h3>
                     <p>Graduated with honors and started my first full-time job as a Data Scientist at DEF Ltd.</p>
                 </div>
             </div>
+            <div class="bamboo-grow"></div>
             <div class="timeline-item left">
                 <div class="content">
                     <h3>2022</h3>
                     <p>Developed a novel machine learning model for fraud detection that significantly reduced false positives.</p>
                 </div>
             </div>
+            <div class="bamboo-grow"></div>
             <div class="timeline-item right">
                 <div class="content">
                     <h3>2023</h3>
                     <p>Published a paper on advanced data visualization techniques in a leading journal.</p>
                 </div>
             </div>
+            <div class="bamboo-grow"></div>
         </div>
     </div>
 
@@ -163,10 +179,18 @@
             const bamboo = document.querySelector(".bamboo");
             const timeline = document.querySelector(".timeline");
             const timelineItems = document.querySelectorAll(".timeline-item");
+            const bambooSegments = document.querySelectorAll(".bamboo-grow");
     
             bamboo.addEventListener("click", function() {
                 bamboo.classList.add("grow");
                 timeline.classList.add("visible");
+    
+                // Animate the growth of bamboo segments
+                bambooSegments.forEach((segment, index) => {
+                    setTimeout(() => {
+                        segment.classList.add("visible");
+                    }, index * 2000); // Delay each segment by 2 seconds
+                });
     
                 // Add a delay to animate timeline points after bamboo grows
                 setTimeout(() => {
@@ -175,7 +199,7 @@
                             item.style.opacity = 1;
                         }, index * 500); // Delay each item by 0.5 seconds
                     });
-                }, 2000); // Delay timeline items animation to start after bamboo grows
+                }, bambooSegments.length * 2000); // Delay timeline items animation to start after bamboo grows
             });
         });
     </script>
