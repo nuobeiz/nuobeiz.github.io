@@ -7,7 +7,6 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 header {
-    background-color: #83B4FF;
     background-image: url('img/banner.jpeg') no-repeat top center ;
     color: white;
     text-align: center;
