@@ -1,43 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-}
-header {
-    background-color: #87ceeb;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-}
-nav {
-    text-align: center;
-    margin: 1rem 0;
-}
-nav a {
-    margin: 0 1rem;
-    text-decoration: none;
-    color: #87ceeb;
-}
-.container {
-    width: 80%;
-    margin: auto;
-    padding: 2rem 0;
-}
-h2 {
-    border-bottom: 2px solid #87ceeb;
-    padding-bottom: 0.5rem;
-}
-footer {
-    background-color: #87ceeb;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    width: 100%;
-    position: relative; /* Removed absolute positioning */
-}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800;900&display=swap');
 
