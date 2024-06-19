@@ -59,14 +59,13 @@ h2 {
     padding-bottom: 0.5rem;
 }
 footer {
-    background-color: #87ceeb;
+    background-color: #83B4FF;
     color: white;
     text-align: center;
     padding: 1rem 0;
     width: 100%;
     position: relative; /* Removed absolute positioning */
 }
-
 
 .timeline {
     display: flex;
