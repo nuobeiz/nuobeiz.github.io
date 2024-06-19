@@ -165,8 +165,8 @@ footer {
   .profile-pic {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops the image to fit the container */
-    border-radius: 80%; /* Optional: makes the image round */
+    object-fit: scale-down; /* Crops the image to fit the container */
+    border-radius: 50%; /* Optional: makes the image round */
   }
   
   .text-card {
