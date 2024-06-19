@@ -84,8 +84,8 @@ footer {
 
 /* Create three equal columns that sit next to each other */
 .left, .middle, .right {
-    -ms-flex: 33.33%; /* IE10 */
-    flex: 33.33%;
+    -ms-flex: 33%; /* IE10 */
+    flex: 33%;
     padding: 20px;
 }
 
