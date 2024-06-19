@@ -1,3 +1,36 @@
+:root {
+    --global-bg-color: #fff;
+    --global-code-bg-color: rgba(181, 9, 172, 0.05);
+    --global-text-color: #000;
+    --global-text-color-light: #828282;
+    --global-theme-color: #2698ba;
+    --global-hover-color: #2698ba;
+    --global-footer-bg-color: #1c1c1d;
+    --global-footer-text-color: #e8e8e8;
+    --global-footer-link-color: #fff;
+    --global-distill-app-color: #828282;
+    --global-divider-color: rgba(0, 0, 0, .1);
+    --global-card-bg-color:#fff
+}
+
+:root .fa-sun {
+    display:none
+}
+
+:root .fa-moon {
+    padding-left: 10px;
+    padding-top: 12px;
+    display:block
+}
+
+:root .repo-img-light {
+    display:block
+}
+
+:root .repo-img-dark {
+    display:none
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -70,7 +103,7 @@ footer {
 .timeline {
     display: flex;
     overflow-x: auto;
-    padding: 20px;
+    padding: 2rem 0s;
     background-color: #fff;
 }
 
