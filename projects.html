@@ -11,15 +11,18 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2%;
+            grid-template-rows: masonry;
+            grid-auto-flow: dense;
+
         }
         .portfolio-item {
             border: 1px solid #87ceeb;
             padding: 1rem;
             border-radius: 5px;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
             background-color: #fff;
+            display: block;
+            flex-direction: column;
         }
         .portfolio-item h3 {
             margin: 0 0 1rem 0;
@@ -63,5 +66,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
 </body>
 </html>
