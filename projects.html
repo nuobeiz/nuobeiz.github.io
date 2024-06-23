@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         .portfolio-items {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2%;
         }
         .portfolio-item {
             border: 1px solid #87ceeb;
             padding: 1rem;
             border-radius: 5px;
-            flex: 1 1 48%;
             box-sizing: border-box;
-            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
         }
         .portfolio-item h3 {
             margin: 0 0 1rem 0;
@@ -29,9 +30,12 @@
             margin: 1rem 0;
             height: auto;
         }
+        .portfolio-item p {
+            flex-grow: 1;
+        }
         @media (max-width: 768px) {
-            .portfolio-item {
-                flex: 1 1 100%;
+            .portfolio-items {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -51,42 +55,13 @@
 
     <div class="container">
         <h2>Project Portfolio</h2>
-        <div class="portfolio-items">
-            <div class="portfolio-item">
-                <h3>Project 1: Sherlock Picasso</h3>
-                <a href="https://github.com/nuobeiz/Sherlock-Picasso" target="_blank">
-                    <img src="img/project1.png" alt="Sherlock Picasso">
-                </a>
-                <p>AI Marketing tool for Small Business. Developed as part of Google PM Hackathon.</p>
-            </div>
-            <div class="portfolio-item">
-                <h3>Project 2: CircularInsightAI</h3>
-                <a href="https://github.com/nuobeiz/CircularInsightAI" target="_blank">
-                    <img src="img/project2.jpeg" alt="CircularInsightAIs">
-                </a>                
-                <p>We built CircularInsightAI, an AI-powered system that innovatively evaluates 
-                    circular economy ideas using a multi-faceted filter and enhancer approach. 
-                    It is designed to empower investors in making efficient and informed assessments.</p>
-            </div>
-            <div class="portfolio-item">
-                <h3>Project 3: FormAI</h3>
-                <a href="https://github.com/nuobeiz/FormAI" target="_blank">
-                    <img src="img/blog1.jpg" alt="FormAI">
-                </a>                
-                <p>Personal Project</p>
-            </div>
-            <div class="portfolio-item">
-                <h3>Project 4: Coming Up</h3>
-                <a href="/" target="_blank">
-                    <img src="/" alt="FormAI">
-                </a>                
-                <p>TODO.</p>
-            </div>
-        </div>
+        <div class="portfolio-items" id="portfolio-items"></div>
     </div>
 
     <footer>
         <p>&copy; 2024 Nuobei Zhang. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
