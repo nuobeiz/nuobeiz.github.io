@@ -2,13 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: #f1faee;
+    color: #1d3557;
     overflow-x: hidden; /* Prevent horizontal scroll */
-}
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
 header {
-    background-color: #83B4FF;
-    color: white;
+    /* background-color: #a8dadc; */
+    background-image: url(https://www.canva.com/design/DAGJHAY8FKs/ZtRVqFuUope7T8rkEjqOXA/view);
+    /* color: white; */
     text-align: center;
     padding: 2rem 0;
 }
@@ -16,10 +18,10 @@ header {
 /* Sticky navbar- toggles between relative and fixed, depending on scroll position. */
 .navbar {
     overflow: hidden;
-    background-color: #1A2130;
+    background-color: #964734;
     position: sticky;
     position: -webkit-sticky;
-    top: 0;
+    top: 2px;
     padding-left: 12rem;
     padding-right: 12rem;
   }
@@ -30,14 +32,8 @@ header {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 20px;
+    padding: 14px 25px;
     text-decoration: none;
-  }
-  
-  
-  /* Right-aligned link */
-  .navbar a.right {
-    float: right;
   }
   
   /* Change color on hover */
@@ -48,7 +44,7 @@ header {
   
   /* Active/current link */
   .navbar a.active {
-    background-color: #666;
+    background-color: #457b9d;
     color: white;
   }
   
@@ -62,7 +58,6 @@ header {
     object-fit: scale-down;
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* Optional: makes the image round */
   }
 h2 {
     border-bottom: 2px solid #87ceeb;
@@ -87,9 +82,10 @@ footer {
 
 /* Create three equal columns that sit next to each other */
 .left, .middle, .right {
-    -ms-flex: 30%; /* IE10 */
-    flex: 30%;
-    padding: 20px;
+    -ms-flex: 20%;
+    flex: 20%;
+    padding: 10px;
+    margin: 4px;
 }
 
 .left {
@@ -97,7 +93,7 @@ footer {
 }
 
 .middle {
-    background-color: white;
+    background-color: f1faee;
 }
 
 .right {
@@ -130,13 +126,12 @@ footer {
 .container2 {
     display: grid;
     grid-template-areas: 
-      "image-card"
-      "text-card";
+      "text-card"
+      "image-card";
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     width: 100%;
     height: auto; /* Full viewport height */
-    gap: 2px;
     position: relative;
   }
   
@@ -146,9 +141,8 @@ footer {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
-    max-width: 300px;
     max-height: 300px;
-    margin: 8px;
+
   }
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -158,6 +152,9 @@ footer {
     justify-self: start;
     align-self: start;
     height: auto; /* Ensures image card height adjusts with the image */
+    max-width: 400px; /* Optional: set max width for the text card */
+    margin-top: -5px;
+    margin-bottom: 5px;
   }
   
   .image-wrapper {
@@ -176,7 +173,9 @@ footer {
     grid-area: text-card;
     justify-self: end;
     align-self: end;
-    max-width: 800px; /* Optional: set max width for the text card */
+    grid-template-columns: 0fr;
+    max-width: 800px;
+    margin-bottom: -5px;
   }
   
   /* Ensure both cards have the same height */
