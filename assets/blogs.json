@@ -1,12 +1,12 @@
 [
   {
     "title": "My First Blog",
-    "image": "assets/_images/blog1.jpg",
+    "image": "assets/images/blog1.jpg",
     "link": "blogs/blog1.html"
   },
   {
-    "title": "Another Adventure",
-    "image": "assets/_images/blog1.jpg",
+    "title": "Upcoming",
+    "image": "assets/images/blog2.jpg",
     "link": "blogs/blog2.html"
   }
 ]
