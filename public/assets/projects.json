@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Project 1: Sherlock Picasso",
+        "description": "AI Marketing tool for Small Business. Developed as part of Google PM Hackathon.",
+        "image": "assets/_images/project1.png",
+        "link": "https://github.com/nuobeiz/Sherlock-Picasso"
+    },
+    {
+        "title": "Project 2: CircularInsightAI",
+        "description": "We built CircularInsightAI, an AI-powered system that innovatively evaluates circular economy ideas using a multi-faceted filter and enhancer approach. It is designed to empower investors in making efficient and informed assessments.",
+        "image": "assets/_images/project2.jpeg",
+        "link": "https://github.com/nuobeiz/CircularInsightAI"
+    },
+    {
+        "title": "Project 3: FormAI",
+        "description": "Personal Project",
+        "image": "assets/_images/blog1.jpg",
+        "link": "https://github.com/nuobeiz/FormAI"
+    },
+    {
+        "title": "Project 4: Coming Up",
+        "description": "TODO.",
+        "image": "/",
+        "link": "/"
+    }
+]

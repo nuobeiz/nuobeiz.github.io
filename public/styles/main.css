@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: 'Lucida Console', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex; /* Use flexbox to align sidebar and main content */
+  background: #f8f9fa;
+  overflow: hidden; /* Prevent the page from extending */
+}
+
+/* Navbar: Fully extended across the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 100;
+}
+.navbar a {
+  color: #6c63ff;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+.navbar a:last-child {
+  margin-right: 0;
+}
+.navbar a.active,
+.navbar a:hover {
+  color: #3f3d56;
+  text-decoration: underline;
+}
+
+/* Sidebar: Fixed height and scrollable if content overflows */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  border-right: 1px solid #ececec;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 60px; /* Offset below the navbar */
+  left: 0;
+  bottom: 0;
+  height: calc(100vh - 60px); /* Fill the remaining height below the navbar */
+  overflow-y: auto; /* Make the sidebar scrollable if content overflows */
+}
+
+/* Sidebar content styling */
+.sidebar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+.sidebar h2 {
+  margin: 0.5rem 0 0.2rem 0;
+}
+.sidebar p {
+  margin: 0.2rem 0;
+}
+.sidebar-contact {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  text-align: left;
+  position: absolute;
+  bottom: 1rem; /* Adjust spacing from the bottom */
+  left: 0;
+  width: 100%; /* Ensure it spans the full width of the sidebar */
+  text-align: center; /* Optional: Center the content */
+}
+
+/* Main content: Scrollable if content overflows */
+.main-content {
+  margin-left: 260px;   /* Offset for the sidebar width */
+  margin-top: 60px;     /* Offset for the navbar height */
+  padding: 2rem;
+  padding-right: 10rem;
+  box-sizing: border-box;
+  height: calc(100vh - 60px); /* Fill the remaining height below the navbar */
+  overflow-y: auto; /* Enable scrolling for overflowing content */
+  position: relative;
+  z-index: 1;
+}
+
+/* Horizontal rule styling */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #63c6ff, #e9e8f3);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - My Personal Webpage</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    .project-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .project-card {
+      background: #fff;
+      border: 1px solid #ececec;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      overflow: hidden;
+      text-align: left;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 1rem;
+    }
+    .project-card-link {
+      display: block;
+      margin: 0 1rem 1rem 1rem;
+      color: #6c63ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .project-card-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div id="sidebar-placeholder"></div>
+  <div id="navbar-placeholder"></div>
+  <div class="main-content">
+    <h1>Projects</h1>
+    <div class="project-cards" id="project-cards"></div>
+  </div>
+  <script>
+    fetch('sidebar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('sidebar-placeholder').innerHTML = html;
+      });
+
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navbar-placeholder').innerHTML = html;
+        // Highlight active link
+        const path = window.location.pathname.split('/').pop();
+        if (path === '' || path === 'index.html') document.getElementById('nav-home').classList.add('active');
+        if (path === 'blogs.html') document.getElementById('nav-blogs').classList.add('active');
+        if (path === 'projects.html') document.getElementById('nav-projects').classList.add('active');
+      });
+
+    fetch('assets/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        const container = document.getElementById('project-cards');
+        projects.forEach(project => {
+          const card = document.createElement('div');
+          card.className = 'project-card';
+          card.innerHTML = `
+            <img src="${project.image}" alt="${project.title}">
+            <div class="project-card-title">${project.title}</div>
+            <a class="project-card-link" href="${project.link}">View Project</a>
+          `;
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
